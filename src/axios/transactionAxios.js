@@ -14,3 +14,16 @@ export const createTransaction = (transactionObj) => {
 
   return response
 }
+
+// Get Transactions | GET
+export const getTransactions = (userId) => {
+  const response = axios.get(`${API_URL}`, {
+                    headers: {
+                      Authorization: userId
+                    }
+                    })
+                    .then((res)=> res.data)
+                    .catch((error) => console.log(error))
+
+  return response
+}
